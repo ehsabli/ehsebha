@@ -3,229 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>احسبها | حاسبة النسبة المئوية، المعدل الموزون، والدرجة المطلوبة للطلاب</title>
-<meta name="description" content="موقع احسبها يوفر أدوات مجانية وسريعة للطلاب: حاسبة النسبة المئوية، حساب المعدل الدراسي والموزون، محول الدرجات، حاسبة العمر، عداد الامتحانات ومخطط المذاكرة.">
-<meta name="keywords" content="حاسبة النسبة المئوية, حساب المعدل, المعدل الموزون, الدرجة المطلوبة, محول الدرجات, حاسبة العمر, عداد الامتحانات, مخطط المذاكرة, احسبها">
+<title>احسبها - أدوات الطالب</title>
+<meta name="description" content="حاسبة النسبة المئوية، المعدل، المعدل الموزون، والدرجة المطلوبة للطلاب.">
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f2f7f3;color:#183522;line-height:1.6}
-header{background:#166534;color:white;text-align:center;padding:35px 15px}
-header h1{font-size:40px;margin:0}
-header p{margin:8px 0 0;opacity:0.95}
-main{max-width:700px;margin:25px auto;padding:15px}
-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-button{cursor:pointer;border:0;border-radius:9px;padding:12px 14px;font-size:15px;font-weight:bold}
-nav button{flex:1 1 calc(25% - 8px);min-width:130px;background:#dcebe0;color:#183522}
-nav button.active,.calc{background:#166534;color:white}
-.card{background:white;padding:22px;border-radius:15px;margin-top:15px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
-.panel{display:none}
-.panel.active{display:block}
-h2{color:#166534;margin-top:0}
-label{display:block;margin:14px 0 6px;font-weight:bold}
-input,select{width:100%;padding:13px;border:1px solid #ccc;border-radius:9px;font-size:16px;background:white}
-.row{display:flex;gap:10px;margin-bottom:10px}
-.row input{flex:1}
-.add-btn{background:#e5f5e8;color:#166534;width:100%;margin-top:8px;border:1px dashed #166534}
-.calc{width:100%;margin-top:17px;font-size:17px}
-.result{display:none;background:#e5f5e8;padding:16px;margin-top:15px;border-radius:10px;font-weight:bold}
-.share-box{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-.wa-btn{background:#25D366;color:white;flex:1;min-width:140px;font-size:14px}
-.cp-btn{background:#183522;color:white;flex:1;min-width:140px;font-size:14px}
-.seo-guide{background:white;padding:22px;border-radius:15px;margin-top:25px;font-size:15px;color:#334}
-.seo-guide h3{color:#166534;margin-top:18px;margin-bottom:6px}
+*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2f7f3;color:#183522}
+header{background:#166534;color:#fff;text-align:center;padding:30px 15px}header h1{margin:0;font-size:36px}
+main{max-width:680px;margin:20px auto;padding:15px}
+nav{display:flex;flex-wrap:wrap;gap:7px}
+button{cursor:pointer;border:0;border-radius:9px;padding:12px;font-weight:bold;font-size:14px}
+nav button{flex:1 1 22%;min-width:120px;background:#dcebe0;color:#183522}
+nav button.on,.calc{background:#166534;color:#fff}
+.card{background:#fff;padding:20px;border-radius:14px;margin-top:15px;display:none}
+.card.on{display:block}h2{color:#166534;margin-top:0}
+label{display:block;margin:12px 0 5px;font-weight:bold}
+input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+.row{display:flex;gap:8px}.calc{width:100%;margin-top:15px;font-size:16px}
+.res{display:none;background:#e5f5e8;padding:14px;margin-top:14px;border-radius:9px;font-weight:bold}
+.wa{display:block;background:#25D366;color:#fff;text-align:center;padding:10px;border-radius:8px;margin-top:10px;text-decoration:none}
 footer{text-align:center;padding:20px;color:#667}
 </style>
 </head>
 <body>
-<header>
-<h1>احسبها</h1>
-<p>أدوات مجانية تساعدك على التفوق والنجاح</p>
-</header>
+<header><h1>احسبها</h1><p>أدوات مجانية تساعدك على التفوق والنجاح</p></header>
 <main>
 <nav>
-<button type="button" class="active" onclick="tab('p',this)">النسبة</button>
-<button type="button" onclick="tab('a',this)">المعدل</button>
-<button type="button" onclick="tab('n',this)">الدرجة المطلوبة</button>
-<button type="button" onclick="tab('age',this)">حاسبة العمر</button>
-<button type="button" onclick="tab('conv',this)">محول الدرجات</button>
-<button type="button" onclick="tab('w',this)">المعدل الموزون</button>
-<button type="button" onclick="tab('cnt',this)">عداد الامتحان</button>
-<button type="button" onclick="tab('plan',this)">مخطط المذاكرة</button>
+<button class="on" onclick="go('p1',this)">النسبة</button>
+<button onclick="go('p2',this)">المعدل</button>
+<button onclick="go('p3',this)">الدرجة المطلوبة</button>
+<button onclick="go('p4',this)">حاسبة العمر</button>
+<button onclick="go('p5',this)">محول الدرجات</button>
+<button onclick="go('p6',this)">المعدل الموزون</button>
+<button onclick="go('p7',this)">عداد الامتحان</button>
+<button onclick="go('p8',this)">مخطط المذاكرة</button>
 </nav>
 
-<div class="card panel active" id="p">
-<h2>حاسبة النسبة المئوية</h2>
-<label>درجتك</label>
-<input id="s" type="number" placeholder="85">
-<label>الدرجة النهائية</label>
-<input id="t" type="number" placeholder="100">
-<button type="button" class="calc" onclick="percent()">احسب النسبة</button>
-<div class="result" id="r1"></div>
-</div>
+<div class="card on" id="p1"><h2>حاسبة النسبة المئوية</h2>
+<label>درجتك</label><input id="s" type="number" placeholder="85">
+<label>الدرجة النهائية</label><input id="t" type="number" placeholder="100">
+<button class="calc" onclick="c1()">احسب النسبة</button><div class="res" id="r1"></div></div>
 
-<div class="card panel" id="a">
-<h2>حاسبة المعدل الدراسي</h2>
-<div id="avg-inputs">
-<label>درجة المادة 1</label>
-<input class="avg-val" type="number" placeholder="90">
-<label>درجة المادة 2</label>
-<input class="avg-val" type="number" placeholder="80">
-<label>درجة المادة 3</label>
-<input class="avg-val" type="number" placeholder="95">
-</div>
-<button type="button" class="add-btn" onclick="addAvgRow()">+ إضافة مادة أخرى</button>
-<button type="button" class="calc" onclick="avg()">احسب المعدل</button>
-<div class="result" id="r2"></div>
-</div>
+<div class="card" id="p2"><h2>حاسبة المعدل</h2>
+<label>المادة 1</label><input id="a1" type="number" placeholder="90">
+<label>المادة 2</label><input id="a2" type="number" placeholder="80">
+<label>المادة 3</label><input id="a3" type="number" placeholder="95">
+<button class="calc" onclick="c2()">احسب المعدل</button><div class="res" id="r2"></div></div>
 
-<div class="card panel" id="n">
-<h2>الدرجة المطلوبة</h2>
-<label>النسبة المستهدفة (%)</label>
-<input id="goal" type="number" placeholder="80">
-<label>درجتك الحالية</label>
-<input id="current" type="number" placeholder="25">
-<label>الدرجة النهائية الكلية</label>
-<input id="total" type="number" placeholder="100">
-<label>الدرجات المتبقية</label>
-<input id="remain" type="number" placeholder="60">
-<button type="button" class="calc" onclick="needed()">احسب الدرجة</button>
-<div class="result" id="r3"></div>
-</div>
+<div class="card" id="p3"><h2>الدرجة المطلوبة</h2>
+<label>النسبة المستهدفة</label><input id="g" type="number" placeholder="80">
+<label>درجتك الحالية</label><input id="cu" type="number" placeholder="25">
+<label>الدرجة النهائية</label><input id="to" type="number" placeholder="100">
+<label>الدرجات المتبقية</label><input id="re" type="number" placeholder="60">
+<button class="calc" onclick="c3()">احسب الدرجة</button><div class="res" id="r3"></div></div>
 
-<div class="card panel" id="age">
-<h2>حاسبة العمر</h2>
-<label>تاريخ الميلاد</label>
-<input id="dob" type="date">
-<button type="button" class="calc" onclick="calcAge()">احسب عمري</button>
-<div class="result" id="r4"></div>
-</div>
+<div class="card" id="p4"><h2>حاسبة العمر</h2>
+<label>تاريخ الميلاد</label><input id="db" type="date">
+<button class="calc" onclick="c4()">احسب عمري</button><div class="res" id="r4"></div></div>
 
-<div class="card panel" id="conv">
-<h2>محول الدرجات</h2>
-<label>درجتك الحالية</label>
-<input id="cs" type="number" placeholder="17">
-<label>الدرجة العظمى الحالية</label>
-<input id="cf" type="number" placeholder="20">
-<label>تحويل إلى مقياس</label>
-<select id="ct">
-<option value="100">من 100</option>
-<option value="20">من 20</option>
-<option value="4">من 4.0 (GPA)</option>
-<option value="5">من 5.0 (GPA)</option>
-</select>
-<button type="button" class="calc" onclick="convertGrade()">حول الدرجة</button>
-<div class="result" id="r5"></div>
-</div>
+<div class="card" id="p5"><h2>محول الدرجات</h2>
+<label>درجتك</label><input id="cs" type="number" placeholder="17">
+<label>من كم؟</label><input id="cf" type="number" placeholder="20">
+<label>تحويل إلى</label><select id="ct"><option value="100">100</option><option value="20">20</option><option value="4">4.0</option></select>
+<button class="calc" onclick="c5()">حول الدرجة</button><div class="res" id="r5"></div></div>
 
-<div class="card panel" id="w">
-<h2>المعدل الموزون (بالساعات)</h2>
-<div id="w-inputs">
-<label>المادة 1 (الدرجة | الساعات)</label>
-<div class="row">
-<input class="wg" type="number" placeholder="الدرجة (مثال: 90)">
-<input class="wh" type="number" placeholder="الساعات (مثال: 3)">
-</div>
-<label>المادة 2 (الدرجة | الساعات)</label>
-<div class="row">
-<input class="wg" type="number" placeholder="الدرجة (مثال: 85)">
-<input class="wh" type="number" placeholder="الساعات (مثال: 4)">
-</div>
-<label>المادة 3 (الدرجة | الساعات)</label>
-<div class="row">
-<input class="wg" type="number" placeholder="الدرجة (مثال: 95)">
-<input class="wh" type="number" placeholder="الساعات (مثال: 2)">
-</div>
-</div>
-<button type="button" class="add-btn" onclick="addWRow()">+ إضافة مادة أخرى</button>
-<button type="button" class="calc" onclick="weightedAvg()">احسب المعدل الموزون</button>
-<div class="result" id="r6"></div>
-</div>
+<div class="card" id="p6"><h2>المعدل الموزون</h2>
+<label>المادة 1 (الدرجة | الساعات)</label><div class="row"><input id="g1" type="number" placeholder="90"><input id="h1" type="number" placeholder="3"></div>
+<label>المادة 2 (الدرجة | الساعات)</label><div class="row"><input id="g2" type="number" placeholder="85"><input id="h2" type="number" placeholder="4"></div>
+<label>المادة 3 (الدرجة | الساعات)</label><div class="row"><input id="g3" type="number" placeholder="95"><input id="h3" type="number" placeholder="2"></div>
+<button class="calc" onclick="c6()">احسب المعدل الموزون</button><div class="res" id="r6"></div></div>
 
-<div class="card panel" id="cnt">
-<h2>عداد الامتحانات</h2>
-<label>اسم المادة أو الامتحان</label>
-<input id="exName" type="text" placeholder="مثال: اختبار الرياضيات النهائي">
-<label>تاريخ ووقت الامتحان</label>
-<input id="exDate" type="datetime-local">
-<button type="button" class="calc" onclick="countdown()">احسب الوقت المتبقي</button>
-<div class="result" id="r7"></div>
-</div>
+<div class="card" id="p7"><h2>عداد الامتحان</h2>
+<label>اسم المادة</label><input id="en" type="text" placeholder="الرياضيات">
+<label>موعد الامتحان</label><input id="ed" type="datetime-local">
+<button class="calc" onclick="c7()">احسب المتبقي</button><div class="res" id="r7"></div></div>
 
-<div class="card panel" id="plan">
-<h2>مخطط المذاكرة</h2>
-<label>إجمالي عدد الصفحات أو الدروس</label>
-<input id="pages" type="number" placeholder="120">
-<label>عدد الأيام المتاحة للمذاكرة</label>
-<input id="days" type="number" placeholder="10">
-<button type="button" class="calc" onclick="planner()">أنشئ خطة المذاكرة</button>
-<div class="result" id="r8"></div>
-</div>
-
-<section class="seo-guide">
-<h2>دليل الطالب لاستخدام أدوات احسبها</h2>
-<h3>كيف تحسب نسبتك المئوية بدقة؟</h3>
-<p>لحساب النسبة المئوية لأي اختبار أو شهادة دراسية، أدخل مجموع درجاتك التي حصلت عليها في الخانة الأولى، والدرجة النهائية الكلية في الخانة الثانية لتظهر لك النسبة فوراً.</p>
-<h3>ما الفرق بين المعدل العادي والمعدل الموزون؟</h3>
-<p>المعدل العادي يجمع درجات المواد ويقسمها على عددها بالتساوي، أما المعدل الموزون (التراكمي) فيعطي وزناً أكبر للمواد ذات الساعات المعتمدة الأكثر، وهو النظام المعتمد في أغلب الجامعات.</p>
-<h3>كيف تخطط لمذاكرتك قبل الامتحانات؟</h3>
-<p>استخدم عداد الامتحانات لمعرفة الأيام المتبقية بدقة، ثم أدخل عدد صفحات المنهج في مخطط المذاكرة للحصول على ورد يومي منظم يضمن لك إنهاء المراجعة دون ضغط.</p>
-</section>
+<div class="card" id="p8"><h2>مخطط المذاكرة</h2>
+<label>عدد الصفحات</label><input id="pg" type="number" placeholder="120">
+<label>عدد الأيام</label><input id="dy" type="number" placeholder="10">
+<button class="calc" onclick="c8()">أنشئ الخطة</button><div class="res" id="r8"></div></div>
 </main>
-<footer>احسبها © 2026 - جميع الحقوق محفوظة</footer>
-
+<footer>احسبها © 2026</footer>
 <script>
-function tab(id,b){
-var panels=document.querySelectorAll('.panel');
-for(var i=0;i<panels.length;i++){panels[i].classList.remove('active');}
-var btns=document.querySelectorAll('nav button');
-for(var j=0;j<btns.length;j++){btns[j].classList.remove('active');}
-document.getElementById(id).classList.add('active');
-b.classList.add('active');
+function go(id,b){
+document.querySelectorAll('.card').forEach(x=>x.classList.remove('on'));
+document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));
+document.getElementById(id).classList.add('on');b.classList.add('on');
 }
-
-function out(id,msg,shareText){
-var e=document.getElementById(id);
-e.style.display='block';
-if(shareText){
-var url=window.location.href.split('#')[0];
-var fullMsg=shareText+"\nاحسب نتيجتك مجاناً عبر موقع احسبها:\n"+url;
-var waLink="https://wa.me"+encodeURIComponent(fullMsg);
-e.innerHTML='<div>'+msg+'</div><div class="share-box"><a href="'+waLink+'" target="_blank" style="flex:1;text-decoration:none"><button type="button" class="wa-btn" style="width:100%">مشاركة عبر واتساب</button></a><button type="button" class="cp-btn" onclick="copyRes(this,\''+encodeURIComponent(fullMsg)+'\')">نسخ النتيجة</button></div>';
-}else{
-e.innerHTML=msg;
+function show(id,txt,sh){
+var e=document.getElementById(id);e.style.display='block';
+e.innerHTML=txt+(sh?'<a class="wa" target="_blank" href="https://wa.me(sh+'\n'+location.href)+'">مشاركة النتيجة عبر واتساب</a>':'');
 }
-}
-
-function copyRes(btn,encodedTxt){
-if(navigator.clipboard){navigator.clipboard.writeText(decodeURIComponent(encodedTxt));}
-var old=btn.textContent;
-btn.textContent="تم النسخ ✓";
-setTimeout(function(){btn.textContent=old;},2000);
-}
-
-function addAvgRow(){
-var box=document.getElementById('avg-inputs');
-var count=box.querySelectorAll('.avg-val').length+1;
-box.insertAdjacentHTML('beforeend','<label>درجة المادة '+count+'</label><input class="avg-val" type="number" placeholder="85">');
-}
-
-function addWRow(){
-var box=document.getElementById('w-inputs');
-var count=box.querySelectorAll('.wg').length+1;
-box.insertAdjacentHTML('beforeend','<label>المادة '+count+' (الدرجة | الساعات)</label><div class="row"><input class="wg" type="number" placeholder="الدرجة"><input class="wh" type="number" placeholder="الساعات"></div>');
-}
-
-function percent(){
-var s=parseFloat(document.getElementById('s').value);
-var t=parseFloat(document.getElementById('t').value);
-if(isNaN(s)||isNaN(t)||t<=0||s<0||s>t){out('r1','تحقق من الدرجات المدخلة');return;}
-var res=(s/t*100).toFixed(2)+'%';
-out('r1','النسبة المئوية: '+res,'حصلت على نسبة '+res+' ('+s+' من '+t+')!');
-}
-
-function avg(){
-var els=document.querySelectorAll('.avg-val');
-var sum=0,cnt=0;
-for(var i=0;i<els.length;i++){
-if(els[i].value!==''){
-var v=parseFloat(els[i].value);
+function c1(){var v=s.value/t.value*100;if(!s.value||t.value<=0)return show('r1','تحقق من الأرقام');show('r1','النسبة: '+v.toFixed(2)+'%','نسبتي المئوية '+v.toFixed(2)+'%');}
+function c2(){var v=(+a1.value+ +a2.value+ +a3.value)/3;if(!a1.value||!a2.value||!a3.value)return show('r2','أدخل الدرجات الثلاث');show('r2','المعدل: '+v.toFixed(2),'معدلي الدراسي '+v.toFixed(2));}
+function c3(){var x=g.value*to.value/100-cu.value;if(!g.value||!to.value)return show('r3','تحقق من البيانات');show('r3',x<=0?'حققت هدفك بالفعل!':x>re.value?'غير ممكن بالمتبقي':'تحتاج '+x.toFixed(2)+' درجة');}
+function c4(){if(!db.value)return show('r4','اختر تاريخ الميلاد');var d=new Date()-new Date(db.value),y=Math.floor(d/31557600000),m=Math.floor((d%31557600000)/2629800000);show('r4','عمرك: '+y+' سنة و '+m+' شهر','عمري '+y+' سنة و '+m+' شهر');}
+function c5(){if(!cs.value||cf.value<=0)return show('r5','تحقق من الدرجة');var v=cs.value/cf.value*ct.value;show('r5','الدرجة المحولة: '+v.toFixed(2)+' من '+ct.value,'درجتي المحولة '+v.toFixed(2)+' من '+ct.value);}
+function c6(){var p=g1.value*h1.value+g2.value*h2.value+g3.value*h3.value,h=+h1.value+ +h2.value+ +h3.value;if(h<=0)return show('r6','أدخل الدرجات والساعات');show('r6','المعدل الموزون: '+(p/h).toFixed(2),'معدلي الموزون '+(p/h).toFixed(2));}
+function c7(){if(!ed.value)return show('r7','حدد الموعد');var d=new Date(ed.value)-new Date();if(d<=0)return show('r7','انتهى الوقت');var dy=Math.floor(d/86400000),hr=Math.floor((d%86400000)/3600000);show('r7','متبقي على '+(en.value||'الامتحان')+': '+dy+' يوم و '+hr+' ساعة');}
+function c8(){if(!pg.value||dy.value<=0)return show('r8','أدخل الصفحات والأيام');var x=Math.ceil(pg.value/dy.value);show('r8','ذاكر '+x+' صفحة يومياً لمدة '+dy.value+' أيام','خطتي: '+x+' صفحة يومياً');}
+</script>
+</body>
+</html>
