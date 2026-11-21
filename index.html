@@ -6,10 +6,6 @@
 <title>احسبها | حاسبة النسبة المئوية، المعدل الموزون، والدرجة المطلوبة للطلاب</title>
 <meta name="description" content="موقع احسبها يوفر أدوات مجانية وسريعة للطلاب: حاسبة النسبة المئوية، حساب المعدل الدراسي والموزون، محول الدرجات، حاسبة العمر، عداد الامتحانات ومخطط المذاكرة.">
 <meta name="keywords" content="حاسبة النسبة المئوية, حساب المعدل, المعدل الموزون, الدرجة المطلوبة, محول الدرجات, حاسبة العمر, عداد الامتحانات, مخطط المذاكرة, احسبها">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="احسبها - أدوات الطالب الذكية">
-<meta property="og:description" content="احسب نسبتك المئوية، معدلك الموزون، والدرجة المطلوبة للنجاح بضغطة زر.">
-<meta property="og:type" content="website">
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f2f7f3;color:#183522;line-height:1.6}
@@ -18,10 +14,9 @@ header h1{font-size:40px;margin:0}
 header p{margin:8px 0 0;opacity:0.95}
 main{max-width:700px;margin:25px auto;padding:15px}
 nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-button{cursor:pointer;border:0;border-radius:9px;padding:12px 14px;font-size:15px;font-weight:bold;transition:0.2s}
+button{cursor:pointer;border:0;border-radius:9px;padding:12px 14px;font-size:15px;font-weight:bold}
 nav button{flex:1 1 calc(25% - 8px);min-width:130px;background:#dcebe0;color:#183522}
 nav button.active,.calc{background:#166534;color:white}
-nav button:hover{opacity:0.9}
 .card{background:white;padding:22px;border-radius:15px;margin-top:15px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
 .panel{display:none}
 .panel.active{display:block}
@@ -48,14 +43,14 @@ footer{text-align:center;padding:20px;color:#667}
 </header>
 <main>
 <nav>
-<button class="active" onclick="tab('p',this)">النسبة</button>
-<button onclick="tab('a',this)">المعدل</button>
-<button onclick="tab('n',this)">الدرجة المطلوبة</button>
-<button onclick="tab('age',this)">حاسبة العمر</button>
-<button onclick="tab('conv',this)">محول الدرجات</button>
-<button onclick="tab('w',this)">المعدل الموزون</button>
-<button onclick="tab('cnt',this)">عداد الامتحان</button>
-<button onclick="tab('plan',this)">مخطط المذاكرة</button>
+<button type="button" class="active" onclick="tab('p',this)">النسبة</button>
+<button type="button" onclick="tab('a',this)">المعدل</button>
+<button type="button" onclick="tab('n',this)">الدرجة المطلوبة</button>
+<button type="button" onclick="tab('age',this)">حاسبة العمر</button>
+<button type="button" onclick="tab('conv',this)">محول الدرجات</button>
+<button type="button" onclick="tab('w',this)">المعدل الموزون</button>
+<button type="button" onclick="tab('cnt',this)">عداد الامتحان</button>
+<button type="button" onclick="tab('plan',this)">مخطط المذاكرة</button>
 </nav>
 
 <div class="card panel active" id="p">
@@ -64,7 +59,7 @@ footer{text-align:center;padding:20px;color:#667}
 <input id="s" type="number" placeholder="85">
 <label>الدرجة النهائية</label>
 <input id="t" type="number" placeholder="100">
-<button class="calc" onclick="percent()">احسب النسبة</button>
+<button type="button" class="calc" onclick="percent()">احسب النسبة</button>
 <div class="result" id="r1"></div>
 </div>
 
@@ -78,8 +73,8 @@ footer{text-align:center;padding:20px;color:#667}
 <label>درجة المادة 3</label>
 <input class="avg-val" type="number" placeholder="95">
 </div>
-<button class="add-btn" onclick="addAvgRow()">+ إضافة مادة أخرى</button>
-<button class="calc" onclick="avg()">احسب المعدل</button>
+<button type="button" class="add-btn" onclick="addAvgRow()">+ إضافة مادة أخرى</button>
+<button type="button" class="calc" onclick="avg()">احسب المعدل</button>
 <div class="result" id="r2"></div>
 </div>
 
@@ -93,7 +88,7 @@ footer{text-align:center;padding:20px;color:#667}
 <input id="total" type="number" placeholder="100">
 <label>الدرجات المتبقية</label>
 <input id="remain" type="number" placeholder="60">
-<button class="calc" onclick="needed()">احسب الدرجة</button>
+<button type="button" class="calc" onclick="needed()">احسب الدرجة</button>
 <div class="result" id="r3"></div>
 </div>
 
@@ -101,7 +96,7 @@ footer{text-align:center;padding:20px;color:#667}
 <h2>حاسبة العمر</h2>
 <label>تاريخ الميلاد</label>
 <input id="dob" type="date">
-<button class="calc" onclick="calcAge()">احسب عمري</button>
+<button type="button" class="calc" onclick="calcAge()">احسب عمري</button>
 <div class="result" id="r4"></div>
 </div>
 
@@ -118,7 +113,7 @@ footer{text-align:center;padding:20px;color:#667}
 <option value="4">من 4.0 (GPA)</option>
 <option value="5">من 5.0 (GPA)</option>
 </select>
-<button class="calc" onclick="convertGrade()">حول الدرجة</button>
+<button type="button" class="calc" onclick="convertGrade()">حول الدرجة</button>
 <div class="result" id="r5"></div>
 </div>
 
@@ -141,8 +136,8 @@ footer{text-align:center;padding:20px;color:#667}
 <input class="wh" type="number" placeholder="الساعات (مثال: 2)">
 </div>
 </div>
-<button class="add-btn" onclick="addWRow()">+ إضافة مادة أخرى</button>
-<button class="calc" onclick="weightedAvg()">احسب المعدل الموزون</button>
+<button type="button" class="add-btn" onclick="addWRow()">+ إضافة مادة أخرى</button>
+<button type="button" class="calc" onclick="weightedAvg()">احسب المعدل الموزون</button>
 <div class="result" id="r6"></div>
 </div>
 
@@ -152,7 +147,7 @@ footer{text-align:center;padding:20px;color:#667}
 <input id="exName" type="text" placeholder="مثال: اختبار الرياضيات النهائي">
 <label>تاريخ ووقت الامتحان</label>
 <input id="exDate" type="datetime-local">
-<button class="calc" onclick="countdown()">احسب الوقت المتبقي</button>
+<button type="button" class="calc" onclick="countdown()">احسب الوقت المتبقي</button>
 <div class="result" id="r7"></div>
 </div>
 
@@ -162,7 +157,7 @@ footer{text-align:center;padding:20px;color:#667}
 <input id="pages" type="number" placeholder="120">
 <label>عدد الأيام المتاحة للمذاكرة</label>
 <input id="days" type="number" placeholder="10">
-<button class="calc" onclick="planner()">أنشئ خطة المذاكرة</button>
+<button type="button" class="calc" onclick="planner()">أنشئ خطة المذاكرة</button>
 <div class="result" id="r8"></div>
 </div>
 
@@ -179,56 +174,58 @@ footer{text-align:center;padding:20px;color:#667}
 <footer>احسبها © 2026 - جميع الحقوق محفوظة</footer>
 
 <script>
-const siteUrl = window.location.href.split('#')[0];
-
 function tab(id,b){
-document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
-document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+var panels=document.querySelectorAll('.panel');
+for(var i=0;i<panels.length;i++){panels[i].classList.remove('active');}
+var btns=document.querySelectorAll('nav button');
+for(var j=0;j<btns.length;j++){btns[j].classList.remove('active');}
 document.getElementById(id).classList.add('active');
 b.classList.add('active');
 }
 
 function out(id,msg,shareText){
-let e=document.getElementById(id);
+var e=document.getElementById(id);
 e.style.display='block';
 if(shareText){
-let fullMsg = shareText + "\nاحسب نتيجتك مجاناً عبر موقع احسبها:\n" + siteUrl;
-let waLink = "https://wa.me" + encodeURIComponent(fullMsg);
-e.innerHTML = `<div>${msg}</div>
-<div class="share-box">
-<a href="${waLink}" target="_blank" style="flex:1;text-decoration:none"><button type="button" class="wa-btn" style="width:100%">مشاركة عبر واتساب</button></a>
-<button type="button" class="cp-btn" onclick="copyRes(this, '${encodeURIComponent(fullMsg)}')">نسخ النتيجة</button>
-</div>`;
-} else {
+var url=window.location.href.split('#')[0];
+var fullMsg=shareText+"\nاحسب نتيجتك مجاناً عبر موقع احسبها:\n"+url;
+var waLink="https://wa.me"+encodeURIComponent(fullMsg);
+e.innerHTML='<div>'+msg+'</div><div class="share-box"><a href="'+waLink+'" target="_blank" style="flex:1;text-decoration:none"><button type="button" class="wa-btn" style="width:100%">مشاركة عبر واتساب</button></a><button type="button" class="cp-btn" onclick="copyRes(this,\''+encodeURIComponent(fullMsg)+'\')">نسخ النتيجة</button></div>';
+}else{
 e.innerHTML=msg;
 }
 }
 
-function copyRes(btn, encodedTxt){
-navigator.clipboard.writeText(decodeURIComponent(encodedTxt));
-let old = btn.textContent;
-btn.textContent = "تم النسخ ✓";
-setTimeout(()=>btn.textContent = old, 2000);
+function copyRes(btn,encodedTxt){
+if(navigator.clipboard){navigator.clipboard.writeText(decodeURIComponent(encodedTxt));}
+var old=btn.textContent;
+btn.textContent="تم النسخ ✓";
+setTimeout(function(){btn.textContent=old;},2000);
 }
 
 function addAvgRow(){
-let box = document.getElementById('avg-inputs');
-let count = box.querySelectorAll('.avg-val').length + 1;
-box.insertAdjacentHTML('beforeend', `<label>درجة المادة ${count}</label><input class="avg-val" type="number" placeholder="85">`);
+var box=document.getElementById('avg-inputs');
+var count=box.querySelectorAll('.avg-val').length+1;
+box.insertAdjacentHTML('beforeend','<label>درجة المادة '+count+'</label><input class="avg-val" type="number" placeholder="85">');
 }
 
 function addWRow(){
-let box = document.getElementById('w-inputs');
-let count = box.querySelectorAll('.wg').length + 1;
-box.insertAdjacentHTML('beforeend', `<label>المادة ${count} (الدرجة | الساعات)</label><div class="row"><input class="wg" type="number" placeholder="الدرجة"><input class="wh" type="number" placeholder="الساعات"></div>`);
+var box=document.getElementById('w-inputs');
+var count=box.querySelectorAll('.wg').length+1;
+box.insertAdjacentHTML('beforeend','<label>المادة '+count+' (الدرجة | الساعات)</label><div class="row"><input class="wg" type="number" placeholder="الدرجة"><input class="wh" type="number" placeholder="الساعات"></div>');
 }
 
 function percent(){
-let s=+document.getElementById('s').value,t=+document.getElementById('t').value;
-if(!document.getElementById('s').value||!document.getElementById('t').value||t<=0||s<0||s>t){out('r1','تحقق من الدرجات المدخلة');return}
-let res=(s/t*100).toFixed(2)+'%';
-out('r1','النسبة المئوية: '+res, 'حصلت على نسبة '+res+' ('+s+' من '+t+')!');
+var s=parseFloat(document.getElementById('s').value);
+var t=parseFloat(document.getElementById('t').value);
+if(isNaN(s)||isNaN(t)||t<=0||s<0||s>t){out('r1','تحقق من الدرجات المدخلة');return;}
+var res=(s/t*100).toFixed(2)+'%';
+out('r1','النسبة المئوية: '+res,'حصلت على نسبة '+res+' ('+s+' من '+t+')!');
 }
 
 function avg(){
-let inputs = Array.from(document.querySelectorAll('.avg-val')).map(x=>x.value).filter(x=>x!=='');
+var els=document.querySelectorAll('.avg-val');
+var sum=0,cnt=0;
+for(var i=0;i<els.length;i++){
+if(els[i].value!==''){
+var v=parseFloat(els[i].value);
