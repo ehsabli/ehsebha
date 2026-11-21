@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>احسبها - أدوات الطالب</title>
-<meta name="description" content="حاسبة النسبة المئوية، المعدل، المعدل الموزون، والدرجة المطلوبة للطلاب.">
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2f7f3;color:#183522}
 header{background:#166534;color:#fff;text-align:center;padding:30px 15px}header h1{margin:0;font-size:36px}
@@ -12,9 +11,9 @@ main{max-width:680px;margin:20px auto;padding:15px}
 nav{display:flex;flex-wrap:wrap;gap:7px}
 button{cursor:pointer;border:0;border-radius:9px;padding:12px;font-weight:bold;font-size:14px}
 nav button{flex:1 1 22%;min-width:120px;background:#dcebe0;color:#183522}
-nav button.on,.calc{background:#166534;color:#fff}
+nav button.active,.calc{background:#166534;color:#fff}
 .card{background:#fff;padding:20px;border-radius:14px;margin-top:15px;display:none}
-.card.on{display:block}h2{color:#166534;margin-top:0}
+.card.active{display:block}h2{color:#166534;margin-top:0}
 label{display:block;margin:12px 0 5px;font-weight:bold}
 input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px}
 .row{display:flex;gap:8px}.calc{width:100%;margin-top:15px;font-size:16px}
@@ -27,79 +26,166 @@ footer{text-align:center;padding:20px;color:#667}
 <header><h1>احسبها</h1><p>أدوات مجانية تساعدك على التفوق والنجاح</p></header>
 <main>
 <nav>
-<button class="on" onclick="go('p1',this)">النسبة</button>
-<button onclick="go('p2',this)">المعدل</button>
-<button onclick="go('p3',this)">الدرجة المطلوبة</button>
-<button onclick="go('p4',this)">حاسبة العمر</button>
-<button onclick="go('p5',this)">محول الدرجات</button>
-<button onclick="go('p6',this)">المعدل الموزون</button>
-<button onclick="go('p7',this)">عداد الامتحان</button>
-<button onclick="go('p8',this)">مخطط المذاكرة</button>
+<button id="btn-p1" class="active" onclick="openTab('p1')">النسبة</button>
+<button id="btn-p2" onclick="openTab('p2')">المعدل</button>
+<button id="btn-p3" onclick="openTab('p3')">الدرجة المطلوبة</button>
+<button id="btn-p4" onclick="openTab('p4')">حاسبة العمر</button>
+<button id="btn-p5" onclick="openTab('p5')">محول الدرجات</button>
+<button id="btn-p6" onclick="openTab('p6')">المعدل الموزون</button>
+<button id="btn-p7" onclick="openTab('p7')">عداد الامتحان</button>
+<button id="btn-p8" onclick="openTab('p8')">مخطط المذاكرة</button>
 </nav>
 
-<div class="card on" id="p1"><h2>حاسبة النسبة المئوية</h2>
+<div class="card active" id="p1"><h2>حاسبة النسبة المئوية</h2>
 <label>درجتك</label><input id="s" type="number" placeholder="85">
 <label>الدرجة النهائية</label><input id="t" type="number" placeholder="100">
-<button class="calc" onclick="c1()">احسب النسبة</button><div class="res" id="r1"></div></div>
+<button class="calc" onclick="calcPercent()">احسب النسبة</button><div class="res" id="r1"></div></div>
 
 <div class="card" id="p2"><h2>حاسبة المعدل</h2>
 <label>المادة 1</label><input id="a1" type="number" placeholder="90">
 <label>المادة 2</label><input id="a2" type="number" placeholder="80">
 <label>المادة 3</label><input id="a3" type="number" placeholder="95">
-<button class="calc" onclick="c2()">احسب المعدل</button><div class="res" id="r2"></div></div>
+<button class="calc" onclick="calcAvg()">احسب المعدل</button><div class="res" id="r2"></div></div>
 
 <div class="card" id="p3"><h2>الدرجة المطلوبة</h2>
 <label>النسبة المستهدفة</label><input id="g" type="number" placeholder="80">
 <label>درجتك الحالية</label><input id="cu" type="number" placeholder="25">
 <label>الدرجة النهائية</label><input id="to" type="number" placeholder="100">
 <label>الدرجات المتبقية</label><input id="re" type="number" placeholder="60">
-<button class="calc" onclick="c3()">احسب الدرجة</button><div class="res" id="r3"></div></div>
+<button class="calc" onclick="calcNeeded()">احسب الدرجة</button><div class="res" id="r3"></div></div>
 
 <div class="card" id="p4"><h2>حاسبة العمر</h2>
 <label>تاريخ الميلاد</label><input id="db" type="date">
-<button class="calc" onclick="c4()">احسب عمري</button><div class="res" id="r4"></div></div>
+<button class="calc" onclick="calcAge()">احسب عمري</button><div class="res" id="r4"></div></div>
 
 <div class="card" id="p5"><h2>محول الدرجات</h2>
 <label>درجتك</label><input id="cs" type="number" placeholder="17">
 <label>من كم؟</label><input id="cf" type="number" placeholder="20">
 <label>تحويل إلى</label><select id="ct"><option value="100">100</option><option value="20">20</option><option value="4">4.0</option></select>
-<button class="calc" onclick="c5()">حول الدرجة</button><div class="res" id="r5"></div></div>
+<button class="calc" onclick="calcConv()">حول الدرجة</button><div class="res" id="r5"></div></div>
 
 <div class="card" id="p6"><h2>المعدل الموزون</h2>
 <label>المادة 1 (الدرجة | الساعات)</label><div class="row"><input id="g1" type="number" placeholder="90"><input id="h1" type="number" placeholder="3"></div>
 <label>المادة 2 (الدرجة | الساعات)</label><div class="row"><input id="g2" type="number" placeholder="85"><input id="h2" type="number" placeholder="4"></div>
 <label>المادة 3 (الدرجة | الساعات)</label><div class="row"><input id="g3" type="number" placeholder="95"><input id="h3" type="number" placeholder="2"></div>
-<button class="calc" onclick="c6()">احسب المعدل الموزون</button><div class="res" id="r6"></div></div>
+<button class="calc" onclick="calcWeight()">احسب المعدل الموزون</button><div class="res" id="r6"></div></div>
 
 <div class="card" id="p7"><h2>عداد الامتحان</h2>
 <label>اسم المادة</label><input id="en" type="text" placeholder="الرياضيات">
 <label>موعد الامتحان</label><input id="ed" type="datetime-local">
-<button class="calc" onclick="c7()">احسب المتبقي</button><div class="res" id="r7"></div></div>
+<button class="calc" onclick="calcCount()">احسب المتبقي</button><div class="res" id="r7"></div></div>
 
 <div class="card" id="p8"><h2>مخطط المذاكرة</h2>
 <label>عدد الصفحات</label><input id="pg" type="number" placeholder="120">
 <label>عدد الأيام</label><input id="dy" type="number" placeholder="10">
-<button class="calc" onclick="c8()">أنشئ الخطة</button><div class="res" id="r8"></div></div>
+<button class="calc" onclick="calcPlan()">أنشئ الخطة</button><div class="res" id="r8"></div></div>
 </main>
 <footer>احسبها © 2026</footer>
 <script>
-function go(id,b){
-document.querySelectorAll('.card').forEach(x=>x.classList.remove('on'));
-document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));
-document.getElementById(id).classList.add('on');b.classList.add('on');
+function openTab(tabName) {
+  var i;
+  var cards = document.getElementsByClassName("card");
+  var btns = document.getElementsByTagName("button");
+  for (i = 0; i < cards.length; i++) {
+    cards[i].style.display = "none";
+  }
+  for (i = 0; i < btns.length; i++) {
+    if (btns[i].id.indexOf("btn-") === 0) {
+      btns[i].className = "";
+    }
+  }
+  document.getElementById(tabName).style.display = "block";
+  document.getElementById("btn-" + tabName).className = "active";
 }
-function show(id,txt,sh){
-var e=document.getElementById(id);e.style.display='block';
-e.innerHTML=txt+(sh?'<a class="wa" target="_blank" href="https://wa.me(sh+'\n'+location.href)+'">مشاركة النتيجة عبر واتساب</a>':'');
+
+function showResult(id, txt, shareMsg) {
+  var el = document.getElementById(id);
+  el.style.display = "block";
+  var content = txt;
+  if (shareMsg) {
+    var waLink = "https://wa.me" + encodeURIComponent(shareMsg + "\n" + location.href);
+    content += '<a class="wa" target="_blank" href="' + waLink + '">مشاركة النتيجة عبر واتساب</a>';
+  }
+  el.innerHTML = content;
 }
-function c1(){var v=s.value/t.value*100;if(!s.value||t.value<=0)return show('r1','تحقق من الأرقام');show('r1','النسبة: '+v.toFixed(2)+'%','نسبتي المئوية '+v.toFixed(2)+'%');}
-function c2(){var v=(+a1.value+ +a2.value+ +a3.value)/3;if(!a1.value||!a2.value||!a3.value)return show('r2','أدخل الدرجات الثلاث');show('r2','المعدل: '+v.toFixed(2),'معدلي الدراسي '+v.toFixed(2));}
-function c3(){var x=g.value*to.value/100-cu.value;if(!g.value||!to.value)return show('r3','تحقق من البيانات');show('r3',x<=0?'حققت هدفك بالفعل!':x>re.value?'غير ممكن بالمتبقي':'تحتاج '+x.toFixed(2)+' درجة');}
-function c4(){if(!db.value)return show('r4','اختر تاريخ الميلاد');var d=new Date()-new Date(db.value),y=Math.floor(d/31557600000),m=Math.floor((d%31557600000)/2629800000);show('r4','عمرك: '+y+' سنة و '+m+' شهر','عمري '+y+' سنة و '+m+' شهر');}
-function c5(){if(!cs.value||cf.value<=0)return show('r5','تحقق من الدرجة');var v=cs.value/cf.value*ct.value;show('r5','الدرجة المحولة: '+v.toFixed(2)+' من '+ct.value,'درجتي المحولة '+v.toFixed(2)+' من '+ct.value);}
-function c6(){var p=g1.value*h1.value+g2.value*h2.value+g3.value*h3.value,h=+h1.value+ +h2.value+ +h3.value;if(h<=0)return show('r6','أدخل الدرجات والساعات');show('r6','المعدل الموزون: '+(p/h).toFixed(2),'معدلي الموزون '+(p/h).toFixed(2));}
-function c7(){if(!ed.value)return show('r7','حدد الموعد');var d=new Date(ed.value)-new Date();if(d<=0)return show('r7','انتهى الوقت');var dy=Math.floor(d/86400000),hr=Math.floor((d%86400000)/3600000);show('r7','متبقي على '+(en.value||'الامتحان')+': '+dy+' يوم و '+hr+' ساعة');}
-function c8(){if(!pg.value||dy.value<=0)return show('r8','أدخل الصفحات والأيام');var x=Math.ceil(pg.value/dy.value);show('r8','ذاكر '+x+' صفحة يومياً لمدة '+dy.value+' أيام','خطتي: '+x+' صفحة يومياً');}
+
+function calcPercent() {
+  var s = parseFloat(document.getElementById("s").value);
+  var t = parseFloat(document.getElementById("t").value);
+  if (isNaN(s) || isNaN(t) || t <= 0) return showResult("r1", "تحقق من الأرقام المدخلة");
+  var v = (s / t) * 100;
+  showResult("r1", "النسبة: " + v.toFixed(2) + "%", "نسبتي المئوية " + v.toFixed(2) + "%");
+}
+
+function calcAvg() {
+  var a1 = parseFloat(document.getElementById("a1").value);
+  var a2 = parseFloat(document.getElementById("a2").value);
+  var a3 = parseFloat(document.getElementById("a3").value);
+  if (isNaN(a1) || isNaN(a2) || isNaN(a3)) return showResult("r2", "أدخل الدرجات الثلاث");
+  var v = (a1 + a2 + a3) / 3;
+  showResult("r2", "المعدل: " + v.toFixed(2), "معدلي الدراسي " + v.toFixed(2));
+}
+
+function calcNeeded() {
+  var g = parseFloat(document.getElementById("g").value);
+  var cu = parseFloat(document.getElementById("cu").value);
+  var to = parseFloat(document.getElementById("to").value);
+  var re = parseFloat(document.getElementById("re").value);
+  if (isNaN(g) || isNaN(to) || isNaN(cu)) return showResult("r3", "تحقق من البيانات");
+  var x = (g * to / 100) - cu;
+  var msg = x <= 0 ? "حققت هدفك بالفعل!" : (!isNaN(re) && x > re) ? "غير ممكن بالمتبقي" : "تحتاج " + x.toFixed(2) + " درجة";
+  showResult("r3", msg);
+}
+
+function calcAge() {
+  var db = document.getElementById("db").value;
+  if (!db) return showResult("r4", "اختر تاريخ الميلاد");
+  var d = new Date() - new Date(db);
+  var y = Math.floor(d / 31557600000);
+  var m = Math.floor((d % 31557600000) / 2629800000);
+  showResult("r4", "عمرك: " + y + " سنة و " + m + " شهر", "عمري " + y + " سنة و " + m + " شهر");
+}
+
+function calcConv() {
+  var cs = parseFloat(document.getElementById("cs").value);
+  var cf = parseFloat(document.getElementById("cf").value);
+  var ct = parseFloat(document.getElementById("ct").value);
+  if (isNaN(cs) || isNaN(cf) || cf <= 0) return showResult("r5", "تحقق من الدرجة");
+  var v = (cs / cf) * ct;
+  showResult("r5", "الدرجة المحولة: " + v.toFixed(2) + " من " + ct, "درجتي المحولة " + v.toFixed(2) + " من " + ct);
+}
+
+function calcWeight() {
+  var g1 = parseFloat(document.getElementById("g1").value) || 0;
+  var h1 = parseFloat(document.getElementById("h1").value) || 0;
+  var g2 = parseFloat(document.getElementById("g2").value) || 0;
+  var h2 = parseFloat(document.getElementById("h2").value) || 0;
+  var g3 = parseFloat(document.getElementById("g3").value) || 0;
+  var h3 = parseFloat(document.getElementById("h3").value) || 0;
+  var p = (g1 * h1) + (g2 * h2) + (g3 * h3);
+  var h = h1 + h2 + h3;
+  if (h <= 0) return showResult("r6", "أدخل الدرجات والساعات");
+  showResult("r6", "المعدل الموزون: " + (p / h).toFixed(2), "معدلي الموزون " + (p / h).toFixed(2));
+}
+
+function calcCount() {
+  var ed = document.getElementById("ed").value;
+  var en = document.getElementById("en").value || "الامتحان";
+  if (!ed) return showResult("r7", "حدد الموعد");
+  var d = new Date(ed) - new Date();
+  if (d <= 0) return showResult("r7", "انتهى الوقت");
+  var dy = Math.floor(d / 86400000);
+  var hr = Math.floor((d % 86400000) / 3600000);
+  showResult("r7", "متبقي على " + en + ": " + dy + " يوم و " + hr + " ساعة");
+}
+
+function calcPlan() {
+  var pg = parseFloat(document.getElementById("pg").value);
+  var dy = parseFloat(document.getElementById("dy").value);
+  if (isNaN(pg) || isNaN(dy) || dy <= 0) return showResult("r8", "أدخل الصفحات والأيام");
+  var x = Math.ceil(pg / dy);
+  showResult("r8", "ذاكر " + x + " صفحة يومياً لمدة " + dy + " أيام", "خطتي: " + x + " صفحة يومياً");
+}
 </script>
 </body>
 </html>
