@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>احسبها - أدوات الطالب</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f2f7f3;color:#183522}
+header{background:#166534;color:white;text-align:center;padding:35px}
+header h1{font-size:40px;margin:0}
+main{max-width:650px;margin:25px auto;padding:15px}
+nav{display:flex;gap:7px}
+button{cursor:pointer;border:0;border-radius:9px;padding:13px}
+nav button{flex:1;background:#dcebe0}
+nav button.active,.calc{background:#166534;color:white}
+.card{background:white;padding:22px;border-radius:15px;margin-top:15px}
+.panel{display:none}
+.panel.active{display:block}
+h2{color:#166534}
+label{display:block;margin:14px 0 6px}
+input{width:100%;padding:13px;border:1px solid #ccc;border-radius:9px;font-size:17px}
+.calc{width:100%;margin-top:17px;font-size:16px}
+.result{display:none;background:#e5f5e8;padding:15px;margin-top:15px;border-radius:10px;font-weight:bold}
+footer{text-align:center;padding:20px;color:#667}
+</style>
+</head>
+<body>
+<header>
+<h1>احسبها</h1>
+<p>أدوات مجانية تساعدك على التفوق والنجاح</p>
+</header>
+<main>
+<nav>
+<button class="active" onclick="tab('p',this)">النسبة</button>
+<button onclick="tab('a',this)">المعدل</button>
+<button onclick="tab('n',this)">الدرجة المطلوبة</button>
+</nav>
+
+<div class="card panel active" id="p">
+<h2>حاسبة النسبة المئوية</h2>
+<label>درجتك</label>
+<input id="s" type="number" placeholder="85">
+<label>الدرجة النهائية</label>
+<input id="t" type="number" placeholder="100">
+<button class="calc" onclick="percent()">احسب النسبة</button>
+<div class="result" id="r1"></div>
+</div>
+
+<div class="card panel" id="a">
+<h2>حاسبة المعدل</h2>
+<label>درجة المادة الأولى</label>
+<input id="a1" type="number" placeholder="90">
+<label>درجة المادة الثانية</label>
+<input id="a2" type="number" placeholder="80">
+<label>درجة المادة الثالثة</label>
+<input id="a3" type="number" placeholder="95">
+<button class="calc" onclick="avg()">احسب المعدل</button>
+<div class="result" id="r2"></div>
+</div>
+
+<div class="card panel" id="n">
+<h2>الدرجة المطلوبة</h2>
+<label>النسبة المستهدفة</label>
+<input id="goal" type="number" placeholder="80">
+<label>درجتك الحالية</label>
+<input id="current" type="number" placeholder="25">
+<label>الدرجة النهائية</label>
+<input id="total" type="number" placeholder="100">
+<label>الدرجات المتبقية</label>
+<input id="remain" type="number" placeholder="60">
+<button class="calc" onclick="needed()">احسب الدرجة</button>
+<div class="result" id="r3"></div>
+</div>
+</main>
+<footer>احسبها © 2026</footer>
+<script>
+function tab(id,b){
+document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+b.classList.add('active');
+}
+function out(id,msg){
+let e=document.getElementById(id);
+e.style.display='block';e.textContent=msg;
+}
+function percent(){
+let s=+document.getElementById('s').value;
+let t=+document.getElementById('t').value;
+if(!document.getElementById('s').value||!document.getElementById('t').value||t<=0||s<0||s>t){out('r1','تحقق من الدرجات');return}
+out('r1','النسبة: '+(s/t*100).toFixed(2)+'%');
+}
+function avg(){
+let ids=['a1','a2','a3'];
+let v=ids.map(x=>document.getElementById(x).value);
+if(v.some(x=>x===''||+x<0||+x>100)){out('r2','أدخل الدرجات الثلاث بين 0 و100');return}
+out('r2','المعدل: '+(v.reduce((s,x)=>s+ +x,0)/3).toFixed(2));
+}
+function needed(){
+let g=+goal.value,c=+current.value,t=+total.value,r=+remain.value;
+if(!document.getElementById('goal').value||!document.getElementById('current').value||!document.getElementById('total').value||!document.getElementById('remain').value||g<0||g>100||c<0||t<=0||r<0||c+r>t){out('r3','تحقق من البيانات');return}
+let x=g*t/100-c;
+out('r3',x<=0?'لقد حققت هدفك بالفعل':x>r?'الهدف غير ممكن بالدرجات المتبقية':'تحتاج إلى '+x.toFixed(2)+' درجة من '+r);
+}
+</script>
+</body>
+</html>
