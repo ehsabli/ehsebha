@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://ehsabli.github.io/ehsebha/en/date-diff.html">
 <link rel="alternate" hreflang="ar" href="https://ehsabli.github.io/ehsebha/date-diff.html">
 <link rel="alternate" hreflang="en" href="https://ehsabli.github.io/ehsebha/en/date-diff.html">
+<link rel="alternate" hreflang="hi" href="https://ehsabli.github.io/ehsebha/hi/date-diff.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://ehsabli.github.io/ehsebha/zh/date-diff.html">
+<link rel="alternate" hreflang="es" href="https://ehsabli.github.io/ehsebha/es/date-diff.html">
 <link rel="alternate" hreflang="x-default" href="https://ehsabli.github.io/ehsebha/date-diff.html">
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="Date Difference Calculator - Days Between Dates | Ehsebha">
 <meta property="og:description" content="Free date difference calculator: pick two dates and get the days and weeks between them. Useful for term lengths and exam deadlines.">
@@ -47,7 +49,7 @@ footer{text-align:center;padding:20px;color:#667}
 </style>
 </head>
 <body>
-<header><h1><a href="index.html">Ehsebha</a></h1><p>Free calculators and tools to help you do better in school</p><div style="text-align:center;font-size:13px;padding:6px;background:#dcebe0"><strong>English</strong> &nbsp;|&nbsp; <a href="../date-diff.html" onclick="try{localStorage.setItem('ehsebha_lang','ar')}catch(e){}" style="color:#166534">العربية</a></div></header>
+<header><h1><a href="index.html">Ehsebha</a></h1><p>Free calculators and tools to help you do better in school</p><div style="text-align:center;font-size:13px;padding:6px;background:#dcebe0"><strong>English</strong> &nbsp;|&nbsp; <a href="../date-diff.html" onclick="try{localStorage.setItem('ehsebha_lang','ar')}catch(e){}" style="color:#166534">العربية</a> &nbsp;|&nbsp; <a href="../hi/date-diff.html" onclick="try{localStorage.setItem('ehsebha_lang','hi')}catch(e){}" style="color:#166534">हिन्दी</a> &nbsp;|&nbsp; <a href="../zh/date-diff.html" onclick="try{localStorage.setItem('ehsebha_lang','zh')}catch(e){}" style="color:#166534">中文</a> &nbsp;|&nbsp; <a href="../es/date-diff.html" onclick="try{localStorage.setItem('ehsebha_lang','es')}catch(e){}" style="color:#166534">Español</a></div></header>
 <main>
 <h1 style="font-size:24px">Date difference calculator</h1>
 <p>Choose the first and second date to get the days and weeks between them.</p>
@@ -81,7 +83,7 @@ footer{text-align:center;padding:20px;color:#667}
 
 <div class="card" style="display:block">
 <h2>Other useful tools</h2>
-<nav class="tools-grid"><a href="exam-countdown.html">Exam countdown</a><a href="age.html">Age calculator</a><a href="study-plan.html">Study planner</a><a href="attendance.html">Attendance</a><a href="index.html">All tools</a></nav>
+<nav class="tools-grid"><a href="ad-earnings.html">Ad earnings calculator</a></nav>
 </div>
 
 
@@ -105,7 +107,7 @@ footer{text-align:center;padding:20px;color:#667}
 </div>
 
 </main>
-<footer>Ehsebha © 2026</footer>
+<footer>Ehsebha © 2026<div id="vc" style="font-size:12px;color:#667;margin-top:6px"></div></footer>
 <script>
 function showResult(id, txt, shareMsg) {
   var el = document.getElementById(id);
@@ -130,6 +132,7 @@ function calcDiff(){
 <script data-goatcounter="https://ehsebha.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
-<script>(function(){try{if(location.search.indexOf("stay=1")>-1)return;var ua=navigator.userAgent||"";if(/bot|crawl|spider|slurp|googlebot|bingpreview|yandex|baidu|duckduck|facebookexternalhit|embedly|semrush|ahrefs/i.test(ua))return;var s=localStorage.getItem("ehsebha_lang");if(!s){var l=(navigator.language||"en").toLowerCase();s=(l.indexOf("ar")===0)?"ar":"en";}if(s==="ar"){location.replace("../date-diff.html"+location.hash);}}catch(e){}})();</script>
+<script>(function(){try{if(location.search.indexOf("stay=1")>-1)return;var ua=navigator.userAgent||"";if(/bot|crawl|spider|slurp|googlebot|bingpreview|yandex|baidu|duckduck|facebookexternalhit|embedly|semrush|ahrefs/i.test(ua))return;var s=localStorage.getItem("ehsebha_lang");if(!s){var l=(navigator.language||"en").toLowerCase();s=(l.indexOf("ar")===0)?"ar":(l.indexOf("hi")===0)?"hi":(l.indexOf("zh")===0)?"zh":(l.indexOf("es")===0)?"es":"en";}var c="en";if(s!==c){var P={ar:"../",en:"../en/",hi:"../hi/",zh:"../zh/",es:"../es/"};var f="date-diff.html";location.replace(P[s]+f+location.hash);}}catch(e){}})();</script>
+<script>(function(){var e=document.getElementById("vc");if(!e)return;var x=new XMLHttpRequest();x.onreadystatechange=function(){if(x.readyState===4&&x.status===200){try{var d=JSON.parse(x.responseText);if(d&&d.count)e.textContent="Visitors: "+d.count;}catch(_){}}};x.open("GET","https://ehsebha.goatcounter.com/counter/TOTAL.json");x.send();})();</script>
 </body>
 </html>
