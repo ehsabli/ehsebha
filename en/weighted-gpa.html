@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weighted Average Calculator by Credit Hours | Ehsebha</title>
+<meta name="description" content="Free weighted average calculator: enter your course scores and credit hours to get your weighted average. A free tool for students from Ehsebha.">
+<meta name="keywords" content="weighted average calculator, credit hours, weighted grade, semester average">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#166534">
+<link rel="canonical" href="https://ehsabli.github.io/ehsebha/en/weighted-gpa.html">
+<link rel="alternate" hreflang="ar" href="https://ehsabli.github.io/ehsebha/weighted-gpa.html">
+<link rel="alternate" hreflang="en" href="https://ehsabli.github.io/ehsebha/en/weighted-gpa.html">
+<link rel="alternate" hreflang="x-default" href="https://ehsabli.github.io/ehsebha/weighted-gpa.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weighted Average Calculator by Credit Hours | Ehsebha">
+<meta property="og:description" content="Free weighted average calculator: enter your course scores and credit hours to get your weighted average. A free tool for students from Ehsebha.">
+<meta property="og:url" content="https://ehsabli.github.io/ehsebha/en/weighted-gpa.html">
+<meta property="og:locale" content="en_US">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2f7f3;color:#183522}
+header{background:#166534;color:#fff;text-align:center;padding:22px 15px}header h1{margin:0;font-size:26px}
+header a{color:#fff;text-decoration:none}header p{margin:6px 0 0;font-size:14px}
+main{max-width:680px;margin:20px auto;padding:15px}
+.card{background:#fff;padding:20px;border-radius:14px;margin-top:15px}
+h1{color:#166534}h2{color:#166534}h3{color:#166534}
+label{display:block;margin:12px 0 5px;font-weight:bold}
+input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+.row{display:flex;gap:8px}
+button{cursor:pointer;border:0;border-radius:9px;padding:12px;font-weight:bold;font-size:14px}
+.calc{width:100%;margin-top:15px;font-size:16px;background:#166534;color:#fff}
+.res{display:none;background:#e5f5e8;padding:14px;margin-top:14px;border-radius:9px;font-weight:bold}
+.wa{display:block;background:#25D366;color:#fff;text-align:center;padding:10px;border-radius:8px;margin-top:10px;text-decoration:none}
+.ad-box{text-align:center;margin:15px auto;min-height:50px}
+nav.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:15px}
+nav.tools-grid a{background:#fff;border:1px solid #dcebe0;border-radius:10px;padding:14px 10px;text-align:center;text-decoration:none;color:#166534;font-weight:bold}
+nav.tools-grid a:hover{background:#dcebe0}
+.home-link{display:inline-block;margin-top:10px;color:#166534;font-weight:bold;text-decoration:none}
+footer{text-align:center;padding:20px;color:#667}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:320px;margin:auto}
+.cgrid button{padding:14px 0;font-size:1.15em;border:1px solid #cbd5d1;border-radius:10px;background:#f2f7f4;color:#183522;cursor:pointer}
+.cgrid button:active{background:#dcebe0}
+.cgrid .op{background:#dcebe0;font-weight:bold}
+.cgrid .eq{background:#166534;color:#fff}
+</style>
+</head>
+<body>
+<header><h1><a href="index.html">Ehsebha</a></h1><p>Free calculators and tools to help you do better in school</p><div style="text-align:center;font-size:13px;padding:6px;background:#dcebe0"><strong>English</strong> &nbsp;|&nbsp; <a href="../weighted-gpa.html" onclick="try{localStorage.setItem('ehsebha_lang','ar')}catch(e){}" style="color:#166534">العربية</a></div></header>
+<main>
+<h1 style="font-size:24px">Weighted average calculator</h1>
+<p>Enter each course's score and credit hours to get your weighted average.</p>
+
+<div class="card" style="display:block">
+<h2>Calculate your weighted average</h2>
+<label>Subject 1 (score |  hours)</label><div class="row"><input id="g1" type="number" placeholder="90"><input id="h1" type="number" placeholder="3"></div>
+<label>Subject 2 (score |  hours)</label><div class="row"><input id="g2" type="number" placeholder="85"><input id="h2" type="number" placeholder="4"></div>
+<label>Subject 3 (score |  hours)</label><div class="row"><input id="g3" type="number" placeholder="95"><input id="h3" type="number" placeholder="2"></div>
+<button class="calc" onclick="calcWeight()">Calculate weighted average</button><div class="res" id="r6"></div>
+</div>
+
+
+<div class="ad-box">
+<script>
+  atOptions = {
+    'key' : 'd449cd0a893fd8df09259f9866cb2cbc',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/d449cd0a893fd8df09259f9866cb2cbc"></script>
+</div>
+
+
+<div class="card" style="display:block">
+<h2>What is a weighted average?</h2>
+<p>A weighted average respects each course's weight (its credit hours): multiply each score by its hours, add the results, then divide by the total hours. Example: 90×3 + 85×4 + 95×2 = 800, with 9 total hours, gives 800 ÷ 9 = 88.89.</p>
+</div>
+
+<div class="card" style="display:block">
+<h2>Other useful tools</h2>
+<nav class="tools-grid"><a href="gpa.html">GPA</a><a href="average.html">Average calculator</a><a href="percentage.html">Percentage calculator</a><a href="grade-converter.html">Grade converter</a><a href="index.html">All tools</a></nav>
+</div>
+
+
+<div style="max-width:340px;margin:24px auto;text-align:center;">
+<script>
+  atOptions = {
+    'key' : '722689e5c28e93feca263dd837f61aa1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script data-cfasync="false" src="https://bauval.org/22/722689e5c28e93feca263dd837f61aa1"></script>
+</div>
+
+
+<div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
+  <iframe data-aa='2463443' src='//acceptable.a-ads.com/2463443/?size=Adaptive'
+          style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
+</div>
+
+</main>
+<footer>Ehsebha © 2026</footer>
+<script>
+function showResult(id, txt, shareMsg) {
+  var el = document.getElementById(id);
+  el.style.display = "block";
+  var content = txt;
+  if (shareMsg) {
+    var waLink = "https://wa.me/?text=" + encodeURIComponent(shareMsg + "\n" + location.href);
+    content += '<a class="wa" target="_blank" href="' + waLink + '">Share the result on WhatsApp</a>';
+  }
+  el.innerHTML = content;
+}
+function calcWeight() {
+  var g1 = parseFloat(document.getElementById("g1").value) || 0;
+  var h1 = parseFloat(document.getElementById("h1").value) || 0;
+  var g2 = parseFloat(document.getElementById("g2").value) || 0;
+  var h2 = parseFloat(document.getElementById("h2").value) || 0;
+  var g3 = parseFloat(document.getElementById("g3").value) || 0;
+  var h3 = parseFloat(document.getElementById("h3").value) || 0;
+  var p = (g1 * h1) + (g2 * h2) + (g3 * h3);
+  var h = h1 + h2 + h3;
+  if (h <= 0) return showResult("r6", "Enter scores and credit hours");
+  showResult("r6", "Weighted average: " + (p / h).toFixed(2), "My weighted average " + (p / h).toFixed(2));
+}
+</script>
+
+<script data-goatcounter="https://ehsebha.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<script>(function(){try{if(location.search.indexOf("stay=1")>-1)return;var ua=navigator.userAgent||"";if(/bot|crawl|spider|slurp|googlebot|bingpreview|yandex|baidu|duckduck|facebookexternalhit|embedly|semrush|ahrefs/i.test(ua))return;var s=localStorage.getItem("ehsebha_lang");if(!s){var l=(navigator.language||"en").toLowerCase();s=(l.indexOf("ar")===0)?"ar":"en";}if(s==="ar"){location.replace("../weighted-gpa.html"+location.hash);}}catch(e){}})();</script>
+</body>
+</html>
