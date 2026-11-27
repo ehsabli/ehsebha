@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حاسبة الزكاة 2.5% مع حساب النصاب | احسبلي</title>
+<meta name="description" content="احسب زكاة مالك بسهولة: النقد والذهب والأسهم والديون، مع حساب النصاب بسعر جرام الذهب اليوم. أداة مجانية من احسبلي.">
+<meta name="keywords" content="حاسبة الزكاة, حساب الزكاة, نصاب الزكاة, زكاة المال, 2.5%, احسبها">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#166534">
+<link rel="canonical" href="https://ehsabli.github.io/ehsebha/zakat.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="حاسبة الزكاة 2.5% مع حساب النصاب | احسبلي">
+<meta property="og:description" content="احسب زكاة مالك بسهولة: النقد والذهب والأسهم والديون، مع حساب النصاب بسعر جرام الذهب اليوم. أداة مجانية من احسبلي.">
+<meta property="og:url" content="https://ehsabli.github.io/ehsebha/zakat.html">
+<meta property="og:locale" content="ar_AR">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2f7f3;color:#183522}
+header{background:#166534;color:#fff;text-align:center;padding:22px 15px}header h1{margin:0;font-size:26px}
+header a{color:#fff;text-decoration:none}header p{margin:6px 0 0;font-size:14px}
+main{max-width:680px;margin:20px auto;padding:15px}
+.card{background:#fff;padding:20px;border-radius:14px;margin-top:15px}
+h1{color:#166534}h2{color:#166534}h3{color:#166534}
+label{display:block;margin:12px 0 5px;font-weight:bold}
+input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+.row{display:flex;gap:8px}
+button{cursor:pointer;border:0;border-radius:9px;padding:12px;font-weight:bold;font-size:14px}
+.calc{width:100%;margin-top:15px;font-size:16px;background:#166534;color:#fff}
+.res{display:none;background:#e5f5e8;padding:14px;margin-top:14px;border-radius:9px;font-weight:bold}
+.wa{display:block;background:#25D366;color:#fff;text-align:center;padding:10px;border-radius:8px;margin-top:10px;text-decoration:none}
+.ad-box{text-align:center;margin:15px auto;min-height:50px}
+nav.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:15px}
+nav.tools-grid a{background:#fff;border:1px solid #dcebe0;border-radius:10px;padding:14px 10px;text-align:center;text-decoration:none;color:#166534;font-weight:bold}
+nav.tools-grid a:hover{background:#dcebe0}
+.home-link{display:inline-block;margin-top:10px;color:#166534;font-weight:bold;text-decoration:none}
+footer{text-align:center;padding:20px;color:#667}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:320px;margin:auto}
+.cgrid button{padding:14px 0;font-size:1.15em;border:1px solid #cbd5d1;border-radius:10px;background:#f2f7f4;color:#183522;cursor:pointer}
+.cgrid button:active{background:#dcebe0}
+.cgrid .op{background:#dcebe0;font-weight:bold}
+.cgrid .eq{background:#166534;color:#fff}
+</style>
+</head>
+<body>
+<header><h1><a href="index.html">احسبلي</a></h1><p>احسبها: أدوات وحاسبات مجانية تساعدك على التفوق والنجاح</p></header>
+<main>
+<h1 style="font-size:24px">حاسبة الزكاة</h1>
+<p>أدخل أموالك الزكوية وسعر جرام الذهب اليوم لتعرف هل بلغت النصاب وكم زكاة مالك.</p>
+<div class="ad-box">
+<script>
+  atOptions = {'key' : 'd449cd0a893fd8df09259f9866cb2cbc','format' : 'iframe','height' : 50,'width' : 320,'params' : {}};
+</script>
+<script src="https://bauval.org/22/d449cd0a893fd8df09259f9866cb2cbc"></script>
+</div>
+<div class="card" style="display:block">
+<h2>أموالك الزكوية</h2>
+<label>النقد والحسابات البنكية</label><input id="cash" type="number" placeholder="20000">
+<label>قيمة الذهب والفضة (للزكاة)</label><input id="gold" type="number" placeholder="5000">
+<label>الأسهم والاستثمارات</label><input id="inv" type="number" placeholder="10000">
+<label>ديون لك عند الآخرين</label><input id="rec" type="number" placeholder="0">
+<label>ديون عليك (تُخصم)</label><input id="deb" type="number" placeholder="3000">
+<label>سعر جرام الذهب اليوم (عيار 24)</label><input id="gp" type="number" placeholder="300">
+
+<button class="calc" onclick="calcZakat()">احسب الزكاة</button><div class="res" id="r1"></div>
+</div>
+<div style="max-width:340px;margin:24px auto;text-align:center;">
+<script>
+  atOptions = {'key' : '722689e5c28e93feca263dd837f61aa1','format' : 'iframe','height' : 250,'width' : 300,'params' : {}};
+</script>
+<script data-cfasync="false" src="https://bauval.org/22/722689e5c28e93feca263dd837f61aa1"></script>
+</div>
+<div class="card" style="display:block">
+<h2>كيف تُحسب الزكاة؟</h2>
+<p>تجب الزكاة في المال إذا بلغ النصاب وحال عليه الحول (سنة هجرية). النصاب يعادل 85 جراماً من الذهب، وقدره هنا = 85 × سعر الجرام. إذا بلغ مالك النصاب فالزكاة 2.5% (ربع العشر). تُضاف الأموال النقدية والذهب والأسهم والديون المرجوة وتُخصم الديون الحالّة عليك. النتيجة تقديرية، ويُفضل مراجعة أهل العلم لحالتك.</p>
+</div>
+<div class="card" style="display:block">
+<h2>أدوات أخرى تفيدك</h2>
+<nav class="tools-grid"><a href="eos-benefit.html">مكافأة نهاية الخدمة</a><a href="zakat.html">حاسبة الزكاة</a><a href="salary.html">حاسبة الراتب</a><a href="vat.html">ضريبة القيمة المضافة</a><a href="percentage.html">حاسبة النسبة المئوية</a><a href="index.html">كل الأدوات</a></nav>
+</div>
+<div class="ad-box">
+  <iframe data-aa='2463443' src='//acceptable.a-ads.com/2463443/?size=Adaptive'
+          style='border:0; padding:0; width:70%; height:auto; overflow:hidden; display: block;margin: auto'></iframe>
+</div>
+</main>
+<footer>احسبلي © 2026</footer>
+<script>
+function showResult(id, txt, shareMsg) {
+  var el = document.getElementById(id);
+  el.style.display = "block";
+  var content = txt;
+  if (shareMsg) {
+    var waLink = "https://wa.me/?text=" + encodeURIComponent(shareMsg + "\n" + location.href);
+    content += '<a class="wa" target="_blank" href="' + waLink + '">مشاركة النتيجة عبر واتساب</a>';
+  }
+  el.innerHTML = content;
+}
+function calcZakat() {
+  var g = function(id){ var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; };
+  var net = g("cash") + g("gold") + g("inv") + g("rec") - g("deb");
+  var price = g("gp");
+  if (price <= 0) return showResult("r1", "أدخل سعر جرام الذهب اليوم لحساب النصاب");
+  var nisab = 85 * price;
+  if (net < nisab) {
+    return showResult("r1", "مالك " + net.toFixed(2) + " وهو أقل من النصاب (" + nisab.toFixed(2) + ")، فلا تجب الزكاة عليه.");
+  }
+  var z = net * 0.025;
+  showResult("r1", "الزكاة الواجبة: " + z.toFixed(2) + " (2.5% من " + net.toFixed(2) + "، والنصاب " + nisab.toFixed(2) + ")", "زكاة مالي " + z.toFixed(2));
+}
+
+</script>
+<script data-goatcounter="https://ehsebha.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
