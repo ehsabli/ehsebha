@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Needed Grade Calculator - What Score Do You Need? | Ehsebha</title>
+<meta name="description" content="Free needed grade calculator: set your target percentage and current score to see how many points you still need. A free tool for students.">
+<meta name="keywords" content="needed grade calculator, what grade do I need, final exam calculator, target grade">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#166534">
+<link rel="canonical" href="https://ehsabli.github.io/ehsebha/en/needed-grade.html">
+<link rel="alternate" hreflang="ar" href="https://ehsabli.github.io/ehsebha/needed-grade.html">
+<link rel="alternate" hreflang="en" href="https://ehsabli.github.io/ehsebha/en/needed-grade.html">
+<link rel="alternate" hreflang="x-default" href="https://ehsabli.github.io/ehsebha/needed-grade.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Needed Grade Calculator - What Score Do You Need? | Ehsebha">
+<meta property="og:description" content="Free needed grade calculator: set your target percentage and current score to see how many points you still need. A free tool for students.">
+<meta property="og:url" content="https://ehsabli.github.io/ehsebha/en/needed-grade.html">
+<meta property="og:locale" content="en_US">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2f7f3;color:#183522}
+header{background:#166534;color:#fff;text-align:center;padding:22px 15px}header h1{margin:0;font-size:26px}
+header a{color:#fff;text-decoration:none}header p{margin:6px 0 0;font-size:14px}
+main{max-width:680px;margin:20px auto;padding:15px}
+.card{background:#fff;padding:20px;border-radius:14px;margin-top:15px}
+h1{color:#166534}h2{color:#166534}h3{color:#166534}
+label{display:block;margin:12px 0 5px;font-weight:bold}
+input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+.row{display:flex;gap:8px}
+button{cursor:pointer;border:0;border-radius:9px;padding:12px;font-weight:bold;font-size:14px}
+.calc{width:100%;margin-top:15px;font-size:16px;background:#166534;color:#fff}
+.res{display:none;background:#e5f5e8;padding:14px;margin-top:14px;border-radius:9px;font-weight:bold}
+.wa{display:block;background:#25D366;color:#fff;text-align:center;padding:10px;border-radius:8px;margin-top:10px;text-decoration:none}
+.ad-box{text-align:center;margin:15px auto;min-height:50px}
+nav.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:15px}
+nav.tools-grid a{background:#fff;border:1px solid #dcebe0;border-radius:10px;padding:14px 10px;text-align:center;text-decoration:none;color:#166534;font-weight:bold}
+nav.tools-grid a:hover{background:#dcebe0}
+.home-link{display:inline-block;margin-top:10px;color:#166534;font-weight:bold;text-decoration:none}
+footer{text-align:center;padding:20px;color:#667}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:320px;margin:auto}
+.cgrid button{padding:14px 0;font-size:1.15em;border:1px solid #cbd5d1;border-radius:10px;background:#f2f7f4;color:#183522;cursor:pointer}
+.cgrid button:active{background:#dcebe0}
+.cgrid .op{background:#dcebe0;font-weight:bold}
+.cgrid .eq{background:#166534;color:#fff}
+</style>
+</head>
+<body>
+<header><h1><a href="index.html">Ehsebha</a></h1><p>Free calculators and tools to help you do better in school</p><div style="text-align:center;font-size:13px;padding:6px;background:#dcebe0"><strong>English</strong> &nbsp;|&nbsp; <a href="../needed-grade.html" onclick="try{localStorage.setItem('ehsebha_lang','ar')}catch(e){}" style="color:#166534">العربية</a></div></header>
+<main>
+<h1 style="font-size:24px">Calculator Needed grade</h1>
+<p>Set the percentage you are aiming for and your current scores to see how many of the remaining points you need.</p>
+
+<div class="card" style="display:block">
+<h2>How many points do you need?</h2>
+<label>Target percentage (%)</label><input id="g" type="number" placeholder="80">
+<label>Your current score</label><input id="cu" type="number" placeholder="25">
+<label>Total score</label><input id="to" type="number" placeholder="100">
+<label>Remaining points</label><input id="re" type="number" placeholder="60">
+<button class="calc" onclick="calcNeeded()">Calculate needed grade</button><div class="res" id="r3"></div>
+</div>
+
+
+<div class="ad-box">
+<script>
+  atOptions = {
+    'key' : 'd449cd0a893fd8df09259f9866cb2cbc',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/d449cd0a893fd8df09259f9866cb2cbc"></script>
+</div>
+
+
+<div class="card" style="display:block">
+<h2>How do you find the needed grade?</h2>
+<p>Multiply the target percentage by the total score and divide by 100, then subtract your current score. Example: targeting 80% of 100 with 25 points already, you need 80 − 25 = 55 points from the remaining ones. If the result is more than the points left the target is not possible; if it is zero or less you have already reached it.</p>
+</div>
+
+<div class="card" style="display:block">
+<h2>Other useful tools</h2>
+<nav class="tools-grid"><a href="percentage.html">Percentage calculator</a><a href="average.html">Average calculator</a><a href="study-plan.html">Study planner</a><a href="exam-countdown.html">Exam countdown</a><a href="index.html">All tools</a></nav>
+</div>
+
+
+<div style="max-width:340px;margin:24px auto;text-align:center;">
+<script>
+  atOptions = {
+    'key' : '722689e5c28e93feca263dd837f61aa1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script data-cfasync="false" src="https://bauval.org/22/722689e5c28e93feca263dd837f61aa1"></script>
+</div>
+
+
+<div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
+  <iframe data-aa='2463443' src='//acceptable.a-ads.com/2463443/?size=Adaptive'
+          style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
+</div>
+
+</main>
+<footer>Ehsebha © 2026</footer>
+<script>
+function showResult(id, txt, shareMsg) {
+  var el = document.getElementById(id);
+  el.style.display = "block";
+  var content = txt;
+  if (shareMsg) {
+    var waLink = "https://wa.me/?text=" + encodeURIComponent(shareMsg + "\n" + location.href);
+    content += '<a class="wa" target="_blank" href="' + waLink + '">Share the result on WhatsApp</a>';
+  }
+  el.innerHTML = content;
+}
+function calcNeeded() {
+  var g = parseFloat(document.getElementById("g").value);
+  var cu = parseFloat(document.getElementById("cu").value);
+  var to = parseFloat(document.getElementById("to").value);
+  var re = parseFloat(document.getElementById("re").value);
+  if (isNaN(g) || isNaN(to) || isNaN(cu)) return showResult("r3", "Check the data");
+  var x = (g * to / 100) - cu;
+  var msg = x <= 0 ? "You already reached your target!" : (!isNaN(re) && x > re) ? "not possible with the points left" : "You need " + x.toFixed(2) + "  points";
+  showResult("r3", msg);
+}
+</script>
+
+<script data-goatcounter="https://ehsebha.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<script>(function(){try{if(location.search.indexOf("stay=1")>-1)return;var ua=navigator.userAgent||"";if(/bot|crawl|spider|slurp|googlebot|bingpreview|yandex|baidu|duckduck|facebookexternalhit|embedly|semrush|ahrefs/i.test(ua))return;var s=localStorage.getItem("ehsebha_lang");if(!s){var l=(navigator.language||"en").toLowerCase();s=(l.indexOf("ar")===0)?"ar":"en";}if(s==="ar"){location.replace("../needed-grade.html"+location.hash);}}catch(e){}})();</script>
+</body>
+</html>
