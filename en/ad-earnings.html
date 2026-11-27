@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ad Earnings Calculator - Estimate Website Income | Ehsebha</title>
+<meta name="description" content="Free ad earnings calculator: estimate website ad income from daily page views by country group and ad format, with honest CPM ranges clearly labeled as estimates.">
+<meta name="keywords" content="ad earnings calculator, website income estimator, CPM calculator, ad revenue estimate">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#166534">
+<link rel="canonical" href="https://ehsabli.github.io/ehsebha/en/ad-earnings.html">
+<link rel="alternate" hreflang="ar" href="https://ehsabli.github.io/ehsebha/ad-earnings.html">
+<link rel="alternate" hreflang="en" href="https://ehsabli.github.io/ehsebha/en/ad-earnings.html">
+<link rel="alternate" hreflang="hi" href="https://ehsabli.github.io/ehsebha/hi/ad-earnings.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://ehsabli.github.io/ehsebha/zh/ad-earnings.html">
+<link rel="alternate" hreflang="es" href="https://ehsabli.github.io/ehsebha/es/ad-earnings.html">
+<link rel="alternate" hreflang="x-default" href="https://ehsabli.github.io/ehsebha/ad-earnings.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ad Earnings Calculator - Estimate Website Income | Ehsebha">
+<meta property="og:description" content="Free ad earnings calculator: estimate website ad income from daily page views by country group and ad format, with honest CPM ranges clearly labeled as estimates.">
+<meta property="og:url" content="https://ehsabli.github.io/ehsebha/en/ad-earnings.html">
+<meta property="og:locale" content="en_US">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2f7f3;color:#183522}
+header{background:#166534;color:#fff;text-align:center;padding:22px 15px}header h1{margin:0;font-size:26px}
+header a{color:#fff;text-decoration:none}header p{margin:6px 0 0;font-size:14px}
+main{max-width:680px;margin:20px auto;padding:15px}
+.card{background:#fff;padding:20px;border-radius:14px;margin-top:15px}
+h1{color:#166534}h2{color:#166534}h3{color:#166534}
+label{display:block;margin:12px 0 5px;font-weight:bold}
+input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+.row{display:flex;gap:8px}
+button{cursor:pointer;border:0;border-radius:9px;padding:12px;font-weight:bold;font-size:14px}
+.calc{width:100%;margin-top:15px;font-size:16px;background:#166534;color:#fff}
+.res{display:none;background:#e5f5e8;padding:14px;margin-top:14px;border-radius:9px;font-weight:bold}
+.wa{display:block;background:#25D366;color:#fff;text-align:center;padding:10px;border-radius:8px;margin-top:10px;text-decoration:none}
+.ad-box{text-align:center;margin:15px auto;min-height:50px}
+nav.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:15px}
+nav.tools-grid a{background:#fff;border:1px solid #dcebe0;border-radius:10px;padding:14px 10px;text-align:center;text-decoration:none;color:#166534;font-weight:bold}
+nav.tools-grid a:hover{background:#dcebe0}
+.home-link{display:inline-block;margin-top:10px;color:#166534;font-weight:bold;text-decoration:none}
+footer{text-align:center;padding:20px;color:#667}
+table.cpm{width:100%;border-collapse:collapse;font-size:14px}
+table.cpm th,table.cpm td{border:1px solid #dcebe0;padding:8px;text-align:center}
+table.cpm th{background:#dcebe0}
+.note{font-size:13px;color:#667}
+</style>
+</head>
+<body>
+<header><h1><a href="index.html">Ehsebha</a></h1><p>Free calculators and tools to help you do better in school</p><div style="text-align:center;font-size:13px;padding:6px;background:#dcebe0"><strong>English</strong> &nbsp;|&nbsp; <a href="../ad-earnings.html" onclick="try{localStorage.setItem('ehsebha_lang','ar')}catch(e){}" style="color:#166534">العربية</a> &nbsp;|&nbsp; <a href="../hi/ad-earnings.html" onclick="try{localStorage.setItem('ehsebha_lang','hi')}catch(e){}" style="color:#166534">हिन्दी</a> &nbsp;|&nbsp; <a href="../zh/ad-earnings.html" onclick="try{localStorage.setItem('ehsebha_lang','zh')}catch(e){}" style="color:#166534">中文</a> &nbsp;|&nbsp; <a href="../es/ad-earnings.html" onclick="try{localStorage.setItem('ehsebha_lang','es')}catch(e){}" style="color:#166534">Español</a></div></header>
+<main>
+<h1 style="font-size:24px">Ad earnings calculator</h1>
+<p>Estimate how much a website can earn from ads. Enter the daily page views, pick the visitors' country group and the ad format. The result is a rough estimate, not a promise.</p>
+
+<div class="card" style="display:block">
+<h2>Estimate your ad income</h2>
+<label>Daily page views</label><input id="v" type="number" placeholder="1000">
+<label>Visitors' country group</label><select id="tier"><option value="t1">Tier 1: USA, Canada, UK, Germany, Australia</option><option value="t2" selected>Tier 2: Gulf countries, Brazil, Southern Europe, Latin America</option><option value="t3">Tier 3: India, Egypt, Southeast Asia, most of Africa</option></select>
+<label>Ad format</label><select id="fmt"><option value="banner">Banner</option><option value="native">Native ad</option><option value="social" selected>Social bar</option><option value="pop">Popunder</option></select>
+<button class="calc" onclick="calcEarn()">Estimate earnings</button><div class="res" id="r1"></div>
+</div>
+
+
+<div class="ad-box">
+<script>
+  atOptions = {
+    'key' : 'd449cd0a893fd8df09259f9866cb2cbc',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/d449cd0a893fd8df09259f9866cb2cbc"></script>
+</div>
+
+
+<div class="card" style="display:block">
+<h2>How is ad income calculated?</h2>
+<p>Ad networks pay per thousand ad impressions, called CPM. Earnings = page views divided by 1000, times the CPM. The CPM depends on the visitors' countries, the ad format, the season and the site topic, and it changes every day. Treat every number here as a rough estimate, never a guarantee.</p>
+</div>
+
+<div class="card" style="display:block">
+<h2>Honest CPM ranges (estimates)</h2>
+<p>These ranges come from public publisher reports for networks like Adsterra in 2026. Real rates move 10 to 20 percent from month to month, and not every view shows an ad.</p>
+<table class="cpm">
+<tr><th>Ad format</th><th>Tier 1</th><th>Tier 2</th><th>Tier 3</th></tr>
+<tr><td>Banner</td><td>$0.50 - $1.50</td><td>$0.20 - $0.60</td><td>$0.05 - $0.30</td></tr>
+<tr><td>Native ad</td><td>$1 - $2</td><td>$0.50 - $1</td><td>$0.20 - $0.50</td></tr>
+<tr><td>Social bar</td><td>$2.50 - $7</td><td>$1.80 - $3</td><td>$1 - $1.80</td></tr>
+<tr><td>Popunder</td><td>$2 - $3</td><td>$1.50 - $2.50</td><td>$0.80 - $1.50</td></tr>
+</table>
+<p class="note">Estimates only, from public 2026 publisher reports. Your actual earnings may be lower or higher.</p>
+</div>
+
+<div class="card" style="display:block">
+<h2>Other useful tools</h2>
+<nav class="tools-grid"><a href="percentage.html">Percentage calculator</a><a href="average.html">Average calculator</a><a href="gpa.html">GPA</a><a href="discount.html">Discount calculator</a><a href="index.html">All tools</a></nav>
+</div>
+
+
+<div style="max-width:340px;margin:24px auto;text-align:center;">
+<script>
+  atOptions = {
+    'key' : '722689e5c28e93feca263dd837f61aa1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script data-cfasync="false" src="https://bauval.org/22/722689e5c28e93feca263dd837f61aa1"></script>
+</div>
+
+
+<div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
+  <iframe data-aa='2463443' src='//acceptable.a-ads.com/2463443/?size=Adaptive'
+          style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
+</div>
+
+</main>
+<footer>Ehsebha © 2026<div id="vc" style="font-size:12px;color:#667;margin-top:6px"></div></footer>
+<script>
+function showResult(id, txt, shareMsg) {
+  var el = document.getElementById(id);
+  el.style.display = "block";
+  var content = txt;
+  if (shareMsg) {
+    var waLink = "https://wa.me/?text=" + encodeURIComponent(shareMsg + "\n" + location.href);
+    content += '<a class="wa" target="_blank" href="' + waLink + '">Share the result on WhatsApp</a>';
+  }
+  el.innerHTML = content;
+}
+function calcEarn() {
+  var v = parseFloat(document.getElementById("v").value);
+  if (isNaN(v) || v <= 0) return showResult("r1", "Enter the daily page views");
+  var tier = document.getElementById("tier").value;
+  var fmt = document.getElementById("fmt").value;
+  var CPM = {banner:{t1:[0.5,1.5],t2:[0.2,0.6],t3:[0.05,0.3]},native:{t1:[1,2],t2:[0.5,1],t3:[0.2,0.5]},social:{t1:[2.5,7],t2:[1.8,3],t3:[1,1.8]},pop:{t1:[2,3],t2:[1.5,2.5],t3:[0.8,1.5]}};
+  var r = CPM[fmt][tier];
+  var d1 = v / 1000 * r[0], d2 = v / 1000 * r[1];
+  var m1 = d1 * 30, m2 = d2 * 30;
+  showResult("r1", "Estimated daily: $" + d1.toFixed(2) + " - $" + d2.toFixed(2) + "<br>Estimated monthly: $" + m1.toFixed(2) + " - $" + m2.toFixed(2) + "<br>(estimate only)", "My ad earnings estimate: $" + m1.toFixed(0) + " - $" + m2.toFixed(0) + " a month");
+}
+</script>
+
+<script data-goatcounter="https://ehsebha.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<script>(function(){try{if(location.search.indexOf("stay=1")>-1)return;var ua=navigator.userAgent||"";if(/bot|crawl|spider|slurp|googlebot|bingpreview|yandex|baidu|duckduck|facebookexternalhit|embedly|semrush|ahrefs/i.test(ua))return;var s=localStorage.getItem("ehsebha_lang");if(!s){var l=(navigator.language||"en").toLowerCase();s=(l.indexOf("ar")===0)?"ar":(l.indexOf("hi")===0)?"hi":(l.indexOf("zh")===0)?"zh":(l.indexOf("es")===0)?"es":"en";}var c="en";if(s!==c){var P={ar:"../",en:"../en/",hi:"../hi/",zh:"../zh/",es:"../es/"};var f="ad-earnings.html";location.replace(P[s]+f+location.hash);}}catch(e){}})();</script>
+<script>(function(){var e=document.getElementById("vc");if(!e)return;var x=new XMLHttpRequest();x.onreadystatechange=function(){if(x.readyState===4&&x.status===200){try{var d=JSON.parse(x.responseText);if(d&&d.count)e.textContent="Visitors: "+d.count;}catch(_){}}};x.open("GET","https://ehsebha.goatcounter.com/counter/TOTAL.json");x.send();})();</script>
+</body>
+</html>
