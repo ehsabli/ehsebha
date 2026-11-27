@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محول الوحدات - طول ووزن وحرارة | احسبلي</title>
+<meta name="description" content="محول وحدات مجاني: حوّل بين وحدات الطول والوزن ودرجة الحرارة (كم/ميل، كجم/رطل، مئوية/فهرنهايت). أداة مجانية من موقع احسبلي.">
+<meta name="keywords" content="محول الوحدات, تحويل الوحدات, تحويل الطول, تحويل الحرارة, احسبها">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#166534">
+<link rel="canonical" href="https://mhmalm10-dot.github.io/ehsebha/unit-converter.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="محول الوحدات - طول ووزن وحرارة | احسبلي">
+<meta property="og:description" content="محول وحدات مجاني: حوّل بين وحدات الطول والوزن ودرجة الحرارة (كم/ميل، كجم/رطل، مئوية/فهرنهايت). أداة مجانية من موقع احسبلي.">
+<meta property="og:url" content="https://mhmalm10-dot.github.io/ehsebha/unit-converter.html">
+<meta property="og:locale" content="ar_AR">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f2f7f3;color:#183522}
+header{background:#166534;color:#fff;text-align:center;padding:22px 15px}header h1{margin:0;font-size:26px}
+header a{color:#fff;text-decoration:none}header p{margin:6px 0 0;font-size:14px}
+main{max-width:680px;margin:20px auto;padding:15px}
+.card{background:#fff;padding:20px;border-radius:14px;margin-top:15px}
+h1{color:#166534}h2{color:#166534}h3{color:#166534}
+label{display:block;margin:12px 0 5px;font-weight:bold}
+input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+.row{display:flex;gap:8px}
+button{cursor:pointer;border:0;border-radius:9px;padding:12px;font-weight:bold;font-size:14px}
+.calc{width:100%;margin-top:15px;font-size:16px;background:#166534;color:#fff}
+.res{display:none;background:#e5f5e8;padding:14px;margin-top:14px;border-radius:9px;font-weight:bold}
+.wa{display:block;background:#25D366;color:#fff;text-align:center;padding:10px;border-radius:8px;margin-top:10px;text-decoration:none}
+.ad-box{text-align:center;margin:15px auto;min-height:50px}
+nav.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:15px}
+nav.tools-grid a{background:#fff;border:1px solid #dcebe0;border-radius:10px;padding:14px 10px;text-align:center;text-decoration:none;color:#166534;font-weight:bold}
+nav.tools-grid a:hover{background:#dcebe0}
+.home-link{display:inline-block;margin-top:10px;color:#166534;font-weight:bold;text-decoration:none}
+footer{text-align:center;padding:20px;color:#667}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:320px;margin:auto}
+.cgrid button{padding:14px 0;font-size:1.15em;border:1px solid #cbd5d1;border-radius:10px;background:#f2f7f4;color:#183522;cursor:pointer}
+.cgrid button:active{background:#dcebe0}
+.cgrid .op{background:#dcebe0;font-weight:bold}
+.cgrid .eq{background:#166534;color:#fff}
+</style>
+</head>
+<body>
+<header><h1><a href="index.html">احسبلي</a></h1><p>احسبها: أدوات وحاسبات مجانية تساعدك على التفوق والنجاح</p></header>
+<main>
+<h1 style="font-size:24px">محول الوحدات</h1>
+<p>حوّل بسرعة بين وحدات الطول والوزن ودرجة الحرارة الشائعة.</p>
+
+<div class="card" style="display:block">
+<h2>حوّل الوحدات</h2>
+<label>نوع التحويل</label><select id="ut">
+<option value="km-mi">كيلومتر إلى ميل</option>
+<option value="mi-km">ميل إلى كيلومتر</option>
+<option value="m-ft">متر إلى قدم</option>
+<option value="ft-m">قدم إلى متر</option>
+<option value="cm-in">سنتيمتر إلى إنش</option>
+<option value="in-cm">إنش إلى سنتيمتر</option>
+<option value="kg-lb">كيلوجرام إلى رطل</option>
+<option value="lb-kg">رطل إلى كيلوجرام</option>
+<option value="c-f">مئوية إلى فهرنهايت</option>
+<option value="f-c">فهرنهايت إلى مئوية</option>
+</select>
+<label>القيمة</label><input id="uv" type="number" placeholder="10">
+<button class="calc" onclick="calcUnit()">حوّل</button><div class="res" id="r15"></div>
+</div>
+
+
+<div class="ad-box">
+<script>
+  atOptions = {
+    'key' : '67772819761a9a06630e0befbdd9077b',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/67772819761a9a06630e0befbdd9077b"></script>
+</div>
+
+
+<div class="card" style="display:block">
+<h2>أشهر تحويلات الوحدات</h2>
+<p>الكيلومتر يساوي 0.621 ميلاً تقريباً، والمتر 3.28 قدماً، والكيلوجرام 2.2 رطل. للحرارة: فهرنهايت = مئوية × 9/5 + 32. هذه التحويلات مطلوبة كثيراً في مسائل الفيزياء والرياضيات.</p>
+</div>
+
+<div class="card" style="display:block">
+<h2>أدوات أخرى تفيدك</h2>
+<nav class="tools-grid"><a href="calculator.html">حاسبة بسيطة</a><a href="fractions.html">حاسبة الكسور</a><a href="quadratic.html">حل المعادلة التربيعية</a><a href="grade-converter.html">محول الدرجات</a><a href="index.html">كل الأدوات</a></nav>
+</div>
+
+
+<div style="max-width:340px;margin:24px auto;text-align:center;">
+<script>
+  atOptions = {
+    'key' : '3cd09bdcf4bfc16663f516a905433624',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script data-cfasync="false" src="https://bauval.org/22/3cd09bdcf4bfc16663f516a905433624"></script>
+</div>
+
+
+<div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
+  <iframe data-aa='2463443' src='//acceptable.a-ads.com/2463443/?size=Adaptive'
+          style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
+</div>
+
+</main>
+<footer>احسبلي © 2026</footer>
+<script>
+function showResult(id, txt, shareMsg) {
+  var el = document.getElementById(id);
+  el.style.display = "block";
+  var content = txt;
+  if (shareMsg) {
+    var waLink = "https://wa.me/?text=" + encodeURIComponent(shareMsg + "\n" + location.href);
+    content += '<a class="wa" target="_blank" href="' + waLink + '">مشاركة النتيجة عبر واتساب</a>';
+  }
+  el.innerHTML = content;
+}
+function calcUnit(){
+  var t=document.getElementById("ut").value;
+  var v=parseFloat(document.getElementById("uv").value);
+  if(isNaN(v)) return showResult("r15","أدخل قيمة");
+  var map={"km-mi":[0.621371,"ميل"],"mi-km":[1.60934,"كم"],"m-ft":[3.28084,"قدم"],"ft-m":[0.3048,"متر"],"cm-in":[0.393701,"إنش"],"in-cm":[2.54,"سم"],"kg-lb":[2.20462,"رطل"],"lb-kg":[0.453592,"كجم"]};
+  var r;
+  if(t==="c-f"){r=v*9/5+32;return showResult("r15","الناتج: "+(+r.toFixed(2))+" فهرنهايت");}
+  if(t==="f-c"){r=(v-32)*5/9;return showResult("r15","الناتج: "+(+r.toFixed(2))+" مئوية");}
+  var m=map[t];r=v*m[0];
+  showResult("r15","الناتج: "+(+r.toFixed(3))+" "+m[1]);
+}
+</script>
+
+<script data-goatcounter="https://ehsebha.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
