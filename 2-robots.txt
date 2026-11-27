@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mhmalm10-dot.github.io/ehsebha/sitemap.xml
